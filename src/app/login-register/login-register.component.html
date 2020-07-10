@@ -1,0 +1,130 @@
+<div class="login-page">
+    <mat-card class="mat-elevation-z12">
+      <mat-card-title style="text-align:center;">Nombre App</mat-card-title>
+      <mat-tab-group mat-stretch-tabs class="example-stretched-tabs">
+        <mat-tab label="Acceder">
+            <mat-card-content>
+              <form action="">
+                <mat-form-field>
+                  <input
+                    matInput
+                    placeholder="Correo"
+                    required
+                    name="email"
+                    ngModel
+                    #user.email="ngModel">
+                    <mat-error *ngIf="email.invalid">Correo es Requerido</mat-error>
+                  <mat-icon matSuffix>email</mat-icon>
+                </mat-form-field>
+                <mat-form-field>
+                  <input
+                    matInput
+                    placeholder="Contraseña"
+                    type="password"
+                    required
+                    minlength="6"
+                    name="password"
+                    ngModel
+                    #password="ngModel">
+                    <mat-error
+                      *ngIf="password.errors && password.errors.required">
+                      Contraseña es requerida
+                    </mat-error>
+                    <mat-error
+                      *ngIf="password.errors && password.errors.minlength">
+                      Contraseña de 6 caracteres minimo
+                    </mat-error>
+                  <mat-icon matSuffix>lock</mat-icon>
+                </mat-form-field>
+                <mat-checkbox>Recuerdame!</mat-checkbox>
+                <button
+                  mat-raised-button
+                  color="primary"
+                  class="login-button"
+                  type="submit"
+                  >
+                  Acceder
+                </button>
+  
+              </form>
+            </mat-card-content>
+        </mat-tab>
+        <mat-tab label="Registrarse">
+          <mat-card-content>
+            <form action="">
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="Nombre de Usuario"
+                  required
+                  name="username"
+                  ngModel
+                  #username="ngModel">
+                <mat-icon matSuffix>perm_identity</mat-icon>
+                <mat-error
+                  *ngIf="username.invalid">
+                  Usuario Requerido
+                </mat-error>
+  
+              </mat-form-field>
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="Correo"
+                  required
+                  name="email"
+                  ngModel
+                  #email="ngModel">
+                  <mat-error *ngIf="email.invalid">Correo es Requerido</mat-error>
+                <mat-icon matSuffix>email</mat-icon>
+              </mat-form-field>
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="Contraseña"
+                  type="password"
+                  required
+                  minlength="6"
+                  name="password"
+                  ngModel
+                  #password="ngModel">
+                  <mat-error
+                    *ngIf="password.errors && password.errors.required">
+                    Contraseña es requerida
+                  </mat-error>
+                  <mat-error
+                    *ngIf="password.errors && password.errors.minlength">
+                    Contraseña con mas de 6 caracteres
+                  </mat-error>
+                <mat-icon matSuffix>lock</mat-icon>
+  
+              </mat-form-field>
+              <mat-form-field>
+                  <input
+                  matInput
+                  placeholder="Confirme Contraseña"
+                  type="password"
+                  required
+                  minlength="6"
+                  name="repassword"
+                  ngModel
+                  #repassword="ngModel">
+                  <mat-error
+                    *ngIf="repassword.errors && repassword.errors.required">
+                    Ingrese de nuevo la Contraseña
+                  </mat-error>
+                <mat-icon matSuffix>lock</mat-icon>
+              </mat-form-field>
+              <button
+                mat-raised-button
+                color="primary"
+                class="login-button">
+                Crear Cuenta
+              </button>
+            </form>
+          </mat-card-content>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card>
+  </div>
+  
